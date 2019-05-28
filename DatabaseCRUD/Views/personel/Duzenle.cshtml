@@ -1,0 +1,19 @@
+﻿@model personel
+@{
+    ViewData["Title"] = "Düzenle";
+}
+
+<h2>Düzenle harika yap</h2>
+<form method="post" asp-action="Duzenle">
+    <!-- eğer hata olursa burada göster-->
+    @Html.ValidationSummary()
+    <input asp-for="ad" placeholder="ad giriniz" />
+    <hr />
+    <input asp-for="soyad" placeholder="soyad giriniz" />
+    <hr />
+    <select asp-for="cinsiyetId"
+            asp-items="@ViewBag.cinsiyetler"></select>
+    <hr />
+    <input type="hidden" asp-for="personelNo"/>
+    <button type="submit">Güncelle</button>
+</form>

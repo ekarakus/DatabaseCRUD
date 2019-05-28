@@ -1,0 +1,23 @@
+﻿@model List<personel>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row">
+    <div class="col-md-12">
+        <a asp-action="Ekle">Yeni Personel</a>
+    </div>
+</div>
+@foreach (var personel in Model)
+{
+    <div class="row">
+        <div class="col-sm-3">@personel.ad</div>
+        <div class="col-sm-3">@personel.soyad</div>
+        <div class="col-sm-3">@personel.cinsiyet.cinsiyetAdi</div>
+        <div class="col-sm-3">
+            <a asp-action="Sil"
+               asp-route-id="@personel.personelNo">Sil</a>
+            <a asp-action="Duzenle"
+               asp-route-id="@personel.personelNo">Düzenle</a>
+        </div>
+    </div>
+}

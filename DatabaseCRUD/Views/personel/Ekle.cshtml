@@ -1,0 +1,16 @@
+﻿@model personel
+
+
+<h2>Ekle</h2>
+<form method="post" asp-action="Ekle">
+    <!-- eğer hata olursa burada göster-->
+    @Html.ValidationSummary()
+    <input asp-for="ad"  placeholder="ad giriniz"/>
+    <hr />
+    <input asp-for="soyad"  placeholder="soyad giriniz"/>
+    <hr />
+    <select asp-for="cinsiyetId"
+            asp-items="@ViewBag.cinsiyetler"></select>
+    <hr />
+    <button type="submit">Kaydet</button>
+</form>
